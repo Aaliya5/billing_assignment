@@ -27,10 +27,10 @@
 				
 				double total = 0.0;
 				for (Map.Entry<Integer, Integer> entry : cart.entrySet()) {
-					int itemId = entry.getKey();
+					int id = entry.getKey();
 					int quantity = entry.getValue();
 					
-					stmt.setInt(1, itemId);
+					stmt.setInt(1, id);
 					ResultSet rs = stmt.executeQuery();
 					
 					if (rs.next()) {
