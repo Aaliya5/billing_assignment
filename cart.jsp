@@ -54,7 +54,7 @@
 			
             out.println("<h1>Payment:</h1>")
 			out.println("</table>");
-			out.println("<form action='final.jsp' method='post' align='center'>");
+			out.println("<form action='final.html' method='post' align='center'>");
 			out.println("<input type='submit' value='Pay'>");
 			out.println("</form>");
 		}
