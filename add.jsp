@@ -2,7 +2,7 @@
 <%@ page import="java.util.*" %>
 
 <%
-	int itemId = Integer.parseInt(request.getParameter("id"));
+	int id = Integer.parseInt(request.getParameter("id"));
 	
 	Connection conn = null;
 	try {
@@ -11,7 +11,7 @@
 		
 		String sql = "SELECT * FROM shop WHERE id=?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
-		stmt.setInt(1, itemId);
+		stmt.setInt(1, id);
 		ResultSet rs = stmt.executeQuery();
 		
 		if (rs.next()) {
@@ -23,10 +23,10 @@
 			}
 			
 			int quantity = 1;
-			if (cart.containsKey(itemId)) {
-				quantity += cart.get(itemId);
+			if (cart.containsKey(id)) {
+				quantity += cart.get(id);
 			}
-			cart.put(itemId, quantity);
+			cart.put(id, quantity);
 			
 		    response.sendRedirect("home.jsp");
 		} else {
